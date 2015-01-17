@@ -1,0 +1,6 @@
+D:\Universidad\UTN\2015\I Cuatrimestre\2015_1_cuatrimestre_progra3\Clases\Clase 2\HolaMundo\Practica1\bin\Debug\Practica1.exe.config
+D:\Universidad\UTN\2015\I Cuatrimestre\2015_1_cuatrimestre_progra3\Clases\Clase 2\HolaMundo\Practica1\bin\Debug\Practica1.exe
+D:\Universidad\UTN\2015\I Cuatrimestre\2015_1_cuatrimestre_progra3\Clases\Clase 2\HolaMundo\Practica1\bin\Debug\Practica1.pdb
+D:\Universidad\UTN\2015\I Cuatrimestre\2015_1_cuatrimestre_progra3\Clases\Clase 2\HolaMundo\Practica1\obj\Debug\Practica1.csprojResolveAssemblyReference.cache
+D:\Universidad\UTN\2015\I Cuatrimestre\2015_1_cuatrimestre_progra3\Clases\Clase 2\HolaMundo\Practica1\obj\Debug\Practica1.exe
+D:\Universidad\UTN\2015\I Cuatrimestre\2015_1_cuatrimestre_progra3\Clases\Clase 2\HolaMundo\Practica1\obj\Debug\Practica1.pdb
