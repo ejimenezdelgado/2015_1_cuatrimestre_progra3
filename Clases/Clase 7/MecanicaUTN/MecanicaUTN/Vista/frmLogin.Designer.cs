@@ -32,6 +32,10 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.picbImagen = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // lblClave
@@ -67,17 +71,51 @@
             this.txtUsuario.Size = new System.Drawing.Size(190, 20);
             this.txtUsuario.TabIndex = 4;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(270, 135);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(155, 135);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 8;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // picbImagen
+            // 
+            this.picbImagen.Image = global::MecanicaUTN.Properties.Resources.Taller_mecanico;
+            this.picbImagen.Location = new System.Drawing.Point(313, 28);
+            this.picbImagen.Name = "picbImagen";
+            this.picbImagen.Size = new System.Drawing.Size(153, 101);
+            this.picbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbImagen.TabIndex = 10;
+            this.picbImagen.TabStop = false;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 199);
+            this.Controls.Add(this.picbImagen);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblClave);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtUsuario);
             this.Name = "FrmLogin";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.picbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,6 +127,9 @@
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.PictureBox picbImagen;
     }
 }
 

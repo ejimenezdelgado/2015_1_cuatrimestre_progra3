@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace MecanicaUTN.AccesoDatos
 {
-    class IAccesoDatos
+    public interface IAccesoDatos
     {
+        void Conectar();
+
+        void Escribir(string hilera);
+
+        string Leer();
+
+        void Editar(string id, string modificar);
+
+        void Eliminar(string id);
+
+        bool HayError { set; get; }
+
+        string DescripcionError { set; get; }
+
     }
 }

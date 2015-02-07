@@ -16,5 +16,24 @@ namespace MecanicaUTN
         {
             InitializeComponent();
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if ((txtUsuario.Text == "admin") && (txtClave.Text == "12345"))
+            {
+                MessageBox.Show("Gracias por ingresar", "Información", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Usuario y clave erróneos", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
