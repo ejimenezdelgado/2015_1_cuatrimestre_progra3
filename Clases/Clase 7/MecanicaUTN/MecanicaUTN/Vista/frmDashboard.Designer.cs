@@ -81,6 +81,7 @@
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "frmDashboard";
             this.Text = "Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splPrincipal)).EndInit();
