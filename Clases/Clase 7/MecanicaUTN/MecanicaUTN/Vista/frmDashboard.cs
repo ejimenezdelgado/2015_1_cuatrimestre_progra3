@@ -14,7 +14,7 @@ namespace MecanicaUTN.Vista
     {
         public enum formulario
         {
-            agregarRepuesto
+            repuesto
         };
 
         public frmDashboard()
@@ -35,15 +35,15 @@ namespace MecanicaUTN.Vista
 
            switch (formulario)
             {
-                case formulario.agregarRepuesto:
+                case formulario.repuesto:
 
-                   frmAgregarRepuesto ofrmAgregarRepuesto = new frmAgregarRepuesto();
-                   ofrmAgregarRepuesto.TopLevel = false;
-                   ofrmAgregarRepuesto.FormBorderStyle = FormBorderStyle.None;
-                   ofrmAgregarRepuesto.Dock = DockStyle.Fill;
-                   this.splPrincipal.Panel2.Controls.Add(ofrmAgregarRepuesto);
-                   this.splPrincipal.Panel2.Tag = ofrmAgregarRepuesto;
-                   ofrmAgregarRepuesto.Show();
+                    frmRepuesto ofrmRepuesto = new frmRepuesto();
+                    ofrmRepuesto.TopLevel = false;
+                    ofrmRepuesto.FormBorderStyle = FormBorderStyle.None;
+                    ofrmRepuesto.Dock = DockStyle.Fill;
+                    this.splPrincipal.Panel2.Controls.Add(ofrmRepuesto);
+                    this.splPrincipal.Panel2.Tag = ofrmRepuesto;
+                    ofrmRepuesto.Show();
 
 
                     break;
@@ -52,9 +52,9 @@ namespace MecanicaUTN.Vista
             }   
         }
 
-        private void agregarRespuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuRepuesto_Click(object sender, EventArgs e)
         {
-            mostrarFormulario(formulario.agregarRepuesto);
+            mostrarFormulario(formulario.repuesto);
         }
 
     }

@@ -30,11 +30,15 @@
         {
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.menuRepuesto = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarRespuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splPrincipal = new System.Windows.Forms.SplitContainer();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.repuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splPrincipal)).BeginInit();
+            this.splPrincipal.Panel1.SuspendLayout();
             this.splPrincipal.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPrincipal
@@ -49,27 +53,50 @@
             // 
             // menuRepuesto
             // 
-            this.menuRepuesto.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarRespuestoToolStripMenuItem});
             this.menuRepuesto.Name = "menuRepuesto";
             this.menuRepuesto.Size = new System.Drawing.Size(73, 20);
             this.menuRepuesto.Text = "Repuestos";
-            // 
-            // agregarRespuestoToolStripMenuItem
-            // 
-            this.agregarRespuestoToolStripMenuItem.Name = "agregarRespuestoToolStripMenuItem";
-            this.agregarRespuestoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.agregarRespuestoToolStripMenuItem.Text = "Agregar respuesto";
-            this.agregarRespuestoToolStripMenuItem.Click += new System.EventHandler(this.agregarRespuestoToolStripMenuItem_Click);
+            this.menuRepuesto.Click += new System.EventHandler(this.menuRepuesto_Click);
             // 
             // splPrincipal
             // 
             this.splPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splPrincipal.Location = new System.Drawing.Point(0, 24);
             this.splPrincipal.Name = "splPrincipal";
+            // 
+            // splPrincipal.Panel1
+            // 
+            this.splPrincipal.Panel1.Controls.Add(this.menuStrip1);
             this.splPrincipal.Size = new System.Drawing.Size(563, 267);
             this.splPrincipal.SplitterDistance = 106;
             this.splPrincipal.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.repuestoToolStripMenuItem,
+            this.acercaDeToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(86, 267);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // repuestoToolStripMenuItem
+            // 
+            this.repuestoToolStripMenuItem.Name = "repuestoToolStripMenuItem";
+            this.repuestoToolStripMenuItem.RightToLeftAutoMirrorImage = true;
+            this.repuestoToolStripMenuItem.Size = new System.Drawing.Size(73, 19);
+            this.repuestoToolStripMenuItem.Text = "Repuesto";
+            this.repuestoToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.repuestoToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(73, 19);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de ..";
             // 
             // frmDashboard
             // 
@@ -84,8 +111,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
+            this.splPrincipal.Panel1.ResumeLayout(false);
+            this.splPrincipal.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splPrincipal)).EndInit();
             this.splPrincipal.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,8 +126,10 @@
 
         private System.Windows.Forms.MenuStrip menuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem menuRepuesto;
-        private System.Windows.Forms.ToolStripMenuItem agregarRespuestoToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splPrincipal;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem repuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
 
     }
 }
