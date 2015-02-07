@@ -45,6 +45,10 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.splRepuesto = new System.Windows.Forms.SplitContainer();
             this.dtgRepuesto = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
@@ -53,6 +57,7 @@
             this.splRepuesto.Panel2.SuspendLayout();
             this.splRepuesto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRepuesto)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -208,25 +213,66 @@
             // splRepuesto.Panel2
             // 
             this.splRepuesto.Panel2.Controls.Add(this.dtgRepuesto);
-            this.splRepuesto.Size = new System.Drawing.Size(613, 466);
-            this.splRepuesto.SplitterDistance = 313;
+            this.splRepuesto.Panel2.Controls.Add(this.menuStrip1);
+            this.splRepuesto.Size = new System.Drawing.Size(741, 466);
+            this.splRepuesto.SplitterDistance = 315;
             this.splRepuesto.TabIndex = 45;
             // 
             // dtgRepuesto
             // 
             this.dtgRepuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRepuesto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgRepuesto.Location = new System.Drawing.Point(0, 0);
+            this.dtgRepuesto.Location = new System.Drawing.Point(0, 47);
             this.dtgRepuesto.Name = "dtgRepuesto";
-            this.dtgRepuesto.Size = new System.Drawing.Size(296, 466);
+            this.dtgRepuesto.Size = new System.Drawing.Size(422, 419);
             this.dtgRepuesto.TabIndex = 0;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem,
+            this.editarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(422, 47);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // nuevoToolStripMenuItem
+            // 
+            this.nuevoToolStripMenuItem.Image = global::MecanicaUTN.Properties.Resources._1423367308_Add;
+            this.nuevoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(54, 43);
+            this.nuevoToolStripMenuItem.Text = "Nuevo";
+            this.nuevoToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = global::MecanicaUTN.Properties.Resources._1423367449_accessories_text_editor;
+            this.editarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 43);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Image = global::MecanicaUTN.Properties.Resources.descarga;
+            this.eliminarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(62, 43);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // frmRepuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 466);
+            this.ClientSize = new System.Drawing.Size(741, 466);
             this.Controls.Add(this.splRepuesto);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmRepuesto";
             this.Text = "Repuesto";
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto)).EndInit();
@@ -235,9 +281,12 @@
             this.splRepuesto.Panel1.ResumeLayout(false);
             this.splRepuesto.Panel1.PerformLayout();
             this.splRepuesto.Panel2.ResumeLayout(false);
+            this.splRepuesto.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splRepuesto)).EndInit();
             this.splRepuesto.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgRepuesto)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -261,5 +310,9 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.SplitContainer splRepuesto;
         private System.Windows.Forms.DataGridView dtgRepuesto;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

@@ -112,7 +112,18 @@
   <ItemGroup>
     <None Include="Resources\Taller mecanico.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\1423367244_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1423367308_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1423367449_accessories-text-editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

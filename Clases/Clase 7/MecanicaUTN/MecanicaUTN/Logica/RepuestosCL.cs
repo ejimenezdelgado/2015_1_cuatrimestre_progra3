@@ -17,13 +17,13 @@ namespace MecanicaUTN.Logica
         {
             IAccesoDatos accesoDatos = new RepuestosAD();
 
-            accesoDatos.Escribir(Guid.NewGuid().ToString().Substring(0, 10) + " " +
-                                 nombre + " " +
-                                 modelo + " " +
-                                 marca + " " +
-                                 cantidad + " " +
-                                 precio.ToString("n2") + " " +
-                                 impuesto + " " +
+            accesoDatos.Escribir(Guid.NewGuid().ToString().Substring(0, 10) + "@" +
+                                 nombre + "@" +
+                                 modelo + "@" +
+                                 marca + "@" +
+                                 cantidad + "@" +
+                                 precio.ToString("n2") + "@" +
+                                 impuesto + "@" +
                                  gravado);
 
             if (accesoDatos.HayError)
@@ -38,13 +38,13 @@ namespace MecanicaUTN.Logica
         {
             IAccesoDatos accesoDatos = new RepuestosAD();
 
-            accesoDatos.Editar(id, id + " " +
-                                 nombre + " " +
-                                 modelo + " " +
-                                 marca + " " +
-                                 cantidad + " " +
-                                 precio.ToString("n2") + " " +
-                                 impuesto + " " +
+            accesoDatos.Editar(id, id + "@" +
+                                 nombre + "@" +
+                                 modelo + "@" +
+                                 marca + "@" +
+                                 cantidad + "@" +
+                                 precio.ToString("n2") + "@" +
+                                 impuesto + "@" +
                                  gravado);
 
             if (accesoDatos.HayError)
