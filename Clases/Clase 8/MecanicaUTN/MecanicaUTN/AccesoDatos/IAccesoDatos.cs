@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,19 +10,39 @@ namespace MecanicaUTN.AccesoDatos
 {
     public interface IAccesoDatos
     {
-        void Conectar();
+        #region Métodos de conexion
 
-        void Escribir(string hilera);
+        // Indica el estado de la persistencia
+        Boolean Estado();
 
-        string Leer();
+        DataSet EjecutarConsultaSQL(String sql);
 
-        void Editar(string id, string modificar);
+        DataSet EjecutarConsultaSQL(String sql, IEnumerable parametros);
 
-        void Eliminar(string id);
+        #endregion
 
-        bool HayError { set; get; }
+        #region Set & Gets
 
-        string DescripcionError { set; get; }
+        Boolean HayError { set; get; }
 
+        String DescripcionError { set; get; }
+
+        bool HayTransaccion { set; get; }
+
+        ContextDataBase ContextDataBase { get; }
+
+        #endregion
+
+        #region Métodos de la clase
+
+        void LimpiarEstado();
+
+        void IniciarTransaccion();
+
+        void CommitTransaccion();
+
+        void RollbackTransaccion();
+
+        #endregion
     }
 }

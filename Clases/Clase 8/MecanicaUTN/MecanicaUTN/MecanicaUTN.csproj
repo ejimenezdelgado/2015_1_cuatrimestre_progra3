@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,8 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos\AccesoDatosSqlServer.cs" />
+    <Compile Include="AccesoDatos\AceesoDatos.cs" />
+    <Compile Include="AccesoDatos\ContextDataBase.cs" />
     <Compile Include="AccesoDatos\IAccesoDatos.cs" />
-    <Compile Include="AccesoDatos\RepuestosAD.cs" />
     <Compile Include="Entidades\Repuesto.cs" />
     <Compile Include="Logica\RepuestosCL.cs" />
     <Compile Include="Vista\frmAgregarRepuesto.cs">
