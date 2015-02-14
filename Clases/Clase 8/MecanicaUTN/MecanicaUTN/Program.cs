@@ -1,4 +1,5 @@
-﻿using MecanicaUTN.Vista;
+﻿using MecanicaUTN.Logica;
+using MecanicaUTN.Vista;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,9 @@ namespace MecanicaUTN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            RepuestosCL oRepuestosCL = new RepuestosCL();
+            oRepuestosCL.TestBaseDatos();
             Application.Run(new frmDashboard());
         }
     }

@@ -24,7 +24,7 @@ namespace MecanicaUTN.Vista
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             RepuestosCL oRepuestosCl = new RepuestosCL();
-            oRepuestosCl.AgregarRepuesto(txtNombre.Text, txtModelo.Text,
+           /* oRepuestosCl.AgregarRepuesto(txtNombre.Text, txtModelo.Text,
                                          txtMarca.Text, (int)txtCantidad.Value,
                                          (int)txtPrecio.Value,
                                          (int)txtImpuesto.Value,
@@ -39,7 +39,7 @@ namespace MecanicaUTN.Vista
             {
                 MessageBox.Show("Repuesto agregado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.CargarDatos();
-            }
+            }*/
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace MecanicaUTN.Vista
         private void CargarDatos()
         {
             RepuestosCL oRepuestosCl = new RepuestosCL();
-            dtgRepuesto.DataSource=oRepuestosCl.ObtenerRepuestos();
+           // dtgRepuesto.DataSource=oRepuestosCl.ObtenerRepuestos();
         }
 
 
@@ -79,7 +79,7 @@ namespace MecanicaUTN.Vista
             btnCancelar.Enabled = false;
 
             RepuestosCL oRepuestosCl = new RepuestosCL();
-            oRepuestosCl.EliminarRepuesto(dtgRepuesto.SelectedRows[0].Cells[0].Value.ToString());
+           /* oRepuestosCl.EliminarRepuesto(dtgRepuesto.SelectedRows[0].Cells[0].Value.ToString());
             if (oRepuestosCl.HayError)
             {
                 MessageBox.Show(oRepuestosCl.DescripcionError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -89,7 +89,7 @@ namespace MecanicaUTN.Vista
             {
                 MessageBox.Show("Repuesto eliminado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.CargarDatos();
-            }
+            }*/
         }
 
 

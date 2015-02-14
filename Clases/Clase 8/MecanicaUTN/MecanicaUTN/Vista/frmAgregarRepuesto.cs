@@ -21,7 +21,7 @@ namespace MecanicaUTN.Vista
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             RepuestosCL oRepuestosCl = new RepuestosCL();
-            oRepuestosCl.AgregarRepuesto(txtNombre.Text, txtModelo.Text,
+          /*  oRepuestosCl.AgregarRepuesto(txtNombre.Text, txtModelo.Text,
                                          txtMarca.Text, (int)txtCantidad.Value,
                                          (int)txtPrecio.Value,
                                          (int)txtImpuesto.Value,
@@ -36,7 +36,7 @@ namespace MecanicaUTN.Vista
             {
                 MessageBox.Show("Repuesto agregado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-            }
+            }*/
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

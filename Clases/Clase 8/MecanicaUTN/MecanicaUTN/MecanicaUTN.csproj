@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos\AccesoDatosSqlServer.cs" />
-    <Compile Include="AccesoDatos\AceesoDatos.cs" />
+    <Compile Include="AccesoDatos\AccesoDatos.cs" />
     <Compile Include="AccesoDatos\ContextDataBase.cs" />
     <Compile Include="AccesoDatos\IAccesoDatos.cs" />
     <Compile Include="Entidades\Repuesto.cs" />

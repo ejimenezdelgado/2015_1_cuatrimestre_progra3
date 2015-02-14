@@ -34,12 +34,12 @@ namespace MecanicaUTN.AccesoDatos
                     break;*/
 
                 case ContextDataBase.SqlServer:
-                 /*   accesoDatos = new AccesoDatosSqlServer(
+                    accesoDatos = new AccesoDatosSqlServer(
                         ConfigurationManager.AppSettings["Server"],
                         ConfigurationManager.AppSettings["Usuario"],
                         ConfigurationManager.AppSettings["Password"],
                         ConfigurationManager.AppSettings["Database"]
-                        );*/
+                        );
                     break;
             }
         }
