@@ -62,6 +62,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Enabled = false;
             this.btnCancelar.Location = new System.Drawing.Point(166, 304);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -72,6 +73,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Enabled = false;
             this.btnAceptar.Location = new System.Drawing.Point(73, 304);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
@@ -93,6 +95,11 @@
             // txtImpuesto
             // 
             this.txtImpuesto.Location = new System.Drawing.Point(73, 219);
+            this.txtImpuesto.Maximum = new decimal(new int[] {
+            -1530494977,
+            232830,
+            0,
+            0});
             this.txtImpuesto.Name = "txtImpuesto";
             this.txtImpuesto.Size = new System.Drawing.Size(229, 20);
             this.txtImpuesto.TabIndex = 41;
@@ -109,6 +116,11 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(73, 183);
+            this.txtPrecio.Maximum = new decimal(new int[] {
+            -1530494977,
+            232830,
+            0,
+            0});
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(229, 20);
             this.txtPrecio.TabIndex = 39;
@@ -125,6 +137,11 @@
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(73, 142);
+            this.txtCantidad.Maximum = new decimal(new int[] {
+            -1530494977,
+            232830,
+            0,
+            0});
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(229, 20);
             this.txtCantidad.TabIndex = 37;
@@ -247,15 +264,17 @@
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(54, 43);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
-            this.editarToolStripMenuItem.Image = global::MecanicaUTN.Properties.Resources._1423367449_accessories_text_editor;
+            this.editarToolStripMenuItem.Image = global::MecanicaUTN.Properties.Resources.accessories_text_editor;
             this.editarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 43);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
@@ -265,6 +284,7 @@
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(62, 43);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // frmRepuesto
             // 

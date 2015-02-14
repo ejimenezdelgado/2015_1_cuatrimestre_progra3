@@ -13,9 +13,12 @@ namespace MecanicaUTN.Vista
 {
     public partial class frmRepuesto : Form
     {
+        bool esNuevo { set; get; }
+
         public frmRepuesto()
         {
             InitializeComponent();
+            this.CargarDatos();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -35,7 +38,7 @@ namespace MecanicaUTN.Vista
             else
             {
                 MessageBox.Show("Repuesto agregado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                this.CargarDatos();
             }
         }
 
@@ -43,5 +46,53 @@ namespace MecanicaUTN.Vista
         {
             this.Close();
         }
+
+        private void CargarDatos()
+        {
+            RepuestosCL oRepuestosCl = new RepuestosCL();
+            dtgRepuesto.DataSource=oRepuestosCl.ObtenerRepuestos();
+        }
+
+
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            esNuevo = true;
+            btnAceptar.Enabled = true;
+            btnCancelar.Enabled = true;
+            txtNombre.Focus();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            esNuevo = false;
+            btnAceptar.Enabled = false;
+            btnCancelar.Enabled = false;
+
+            txtNombre.Text = dtgRepuesto.SelectedRows[0].Cells[1].Value.ToString();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            esNuevo = false;
+            btnAceptar.Enabled = false;
+            btnCancelar.Enabled = false;
+
+            RepuestosCL oRepuestosCl = new RepuestosCL();
+            oRepuestosCl.EliminarRepuesto(dtgRepuesto.SelectedRows[0].Cells[0].Value.ToString());
+            if (oRepuestosCl.HayError)
+            {
+                MessageBox.Show(oRepuestosCl.DescripcionError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+            }
+            else
+            {
+                MessageBox.Show("Repuesto eliminado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.CargarDatos();
+            }
+        }
+
+
+
     }
 }
