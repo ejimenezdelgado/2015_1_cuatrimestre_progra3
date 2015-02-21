@@ -24,14 +24,14 @@ namespace MecanicaUTN.AccesoDatos
             switch (contextDataBase)
             {
                 case ContextDataBase.PostgreSql:
-                 /*   accesoDatos = new AccesoDatosPostgreSql(
+                   accesoDatos = new AccesoDatosPostgres(
                         ConfigurationManager.AppSettings["Server"],
                         ConfigurationManager.AppSettings["Puerto"],
                         ConfigurationManager.AppSettings["Usuario"],
                         ConfigurationManager.AppSettings["Password"],
                         ConfigurationManager.AppSettings["Database"]
                         );
-                    break;*/
+                    break;
 
                 case ContextDataBase.SqlServer:
                     accesoDatos = new AccesoDatosSqlServer(

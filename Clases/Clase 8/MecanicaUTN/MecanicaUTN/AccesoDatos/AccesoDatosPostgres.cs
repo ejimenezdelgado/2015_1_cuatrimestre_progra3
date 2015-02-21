@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace MecanicaUTN.AccesoDatos
 {
-    public class AccesoDatosPosgrest : IAccesoDatos
+    public class AccesoDatosPostgres : IAccesoDatos
     {
 
         // Constructor
-        public AccesoDatosPosgrest(String servidor, String usuario, String contrasena, String baseDatos)
+        public AccesoDatosPostgres(String servidor,string puerto, String usuario, String contrasena, String baseDatos)
         {
             this.LimpiarEstado();
-            Conexion = new NpgsqlConnection("Data Source=" + servidor + ";UID=" + usuario + ";PWD=" + contrasena + ";Initial Catalog=" + baseDatos);
+            Conexion = new NpgsqlConnection("Host=" + servidor + ";User ID=" + usuario + ";Password=" + contrasena + ";Database=" + baseDatos + ";Port=" + puerto);
 
             Instancias += 1;
             // no puede haber + de una instancia de la clase
@@ -37,7 +37,7 @@ namespace MecanicaUTN.AccesoDatos
 
 
         // destructor
-        ~AccesoDatosPosgrest()
+        ~AccesoDatosPostgres()
         {
             try
             {

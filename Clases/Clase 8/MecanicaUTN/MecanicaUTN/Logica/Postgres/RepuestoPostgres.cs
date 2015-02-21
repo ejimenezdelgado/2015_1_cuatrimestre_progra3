@@ -1,16 +1,17 @@
 ﻿using MecanicaUTN.Entidades;
 using MecanicaUTN.Logica.Intefaces;
+using Npgsql;
+using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MecanicaUTN.Logica.SqlServer
+namespace MecanicaUTN.Logica.Postgres
 {
-    public class RepuestoSqlServer:IRepuestoSql
+    public class RepuestoPostgres: IRepuestoSql
     {
 
         public void AgregarRepuesto(Repuesto repuesto)
@@ -19,49 +20,49 @@ namespace MecanicaUTN.Logica.SqlServer
 
             sql.AppendLine("insert into repuesto (nombre,modelo,marca,cantidad,precio,impuesto,gravado) values (@nombre,@modelo,@marca,@cantidad,@precio,@impuesto,@gravado)");
 
-            List<SqlParameter> parametros = new List<SqlParameter>
+            List<NpgsqlParameter> parametros = new List<NpgsqlParameter>
                 {
-                    new SqlParameter
+                    new NpgsqlParameter
                         {
                             ParameterName = "nombre",
-                            SqlDbType = SqlDbType.VarChar,
-                            SqlValue = repuesto.Nombre
+                            NpgsqlDbType = NpgsqlDbType.Varchar,
+                            NpgsqlValue = repuesto.Nombre
                         },
-                        new SqlParameter
+                        new NpgsqlParameter
                             {
                             ParameterName = "modelo",
-                            SqlDbType = SqlDbType.VarChar,
-                            SqlValue = repuesto.Modelo
+                            NpgsqlDbType = NpgsqlDbType.Varchar,
+                            NpgsqlValue = repuesto.Modelo
                         },
-                        new SqlParameter
+                        new NpgsqlParameter
                             {
                             ParameterName = "marca",
-                            SqlDbType = SqlDbType.VarChar,
-                            SqlValue = repuesto.Marca
+                            NpgsqlDbType = NpgsqlDbType.Varchar,
+                            NpgsqlValue = repuesto.Marca
                         },
-                         new SqlParameter
+                         new NpgsqlParameter
                             {
                             ParameterName = "cantidad",
-                            SqlDbType = SqlDbType.Decimal,
-                            SqlValue = repuesto.Cantidad
+                            NpgsqlDbType = NpgsqlDbType.Numeric,
+                            NpgsqlValue = repuesto.Cantidad
                         },
-                         new SqlParameter
+                         new NpgsqlParameter
                             {
                             ParameterName = "precio",
-                            SqlDbType = SqlDbType.Decimal,
-                            SqlValue = repuesto.Precio
+                            NpgsqlDbType = NpgsqlDbType.Numeric,
+                            NpgsqlValue = repuesto.Precio
                         },
-                         new SqlParameter
+                         new NpgsqlParameter
                             {
                             ParameterName = "impuesto",
-                            SqlDbType = SqlDbType.Decimal,
-                            SqlValue = repuesto.Impuesto
+                            NpgsqlDbType = NpgsqlDbType.Numeric,
+                            NpgsqlValue = repuesto.Impuesto
                         },
-                         new SqlParameter
+                         new NpgsqlParameter
                             {
                             ParameterName = "gravado",
-                            SqlDbType = SqlDbType.Bit,
-                            SqlValue = repuesto.Gravado
+                            NpgsqlDbType = NpgsqlDbType.Bit,
+                            NpgsqlValue = repuesto.Gravado
                         },
                 };
 
@@ -79,55 +80,55 @@ namespace MecanicaUTN.Logica.SqlServer
 
             sql.AppendLine("update repuesto set nombre=@nombre,modelo=@modelo,marca=@marca,cantidad=@cantidad,precio=@precio,impuesto=@impuesto,gravado=@gravado where id=@id");
 
-            List<SqlParameter> parametros = new List<SqlParameter>
+            List<NpgsqlParameter> parametros = new List<NpgsqlParameter>
                 {
-                    new SqlParameter
+                    new NpgsqlParameter
                         {
                             ParameterName = "id",
-                            SqlDbType = SqlDbType.Int,
-                            SqlValue = id
+                            NpgsqlDbType = NpgsqlDbType.Integer,
+                            NpgsqlValue = id
                         },
-                    new SqlParameter
+                    new NpgsqlParameter
                         {
                             ParameterName = "nombre",
-                            SqlDbType = SqlDbType.VarChar,
-                            SqlValue = repuesto.Nombre
+                            NpgsqlDbType = NpgsqlDbType.Varchar,
+                            NpgsqlValue = repuesto.Nombre
                         },
-                        new SqlParameter
+                        new NpgsqlParameter
                             {
                             ParameterName = "modelo",
-                            SqlDbType = SqlDbType.VarChar,
-                            SqlValue = repuesto.Modelo
+                            NpgsqlDbType = NpgsqlDbType.Varchar,
+                            NpgsqlValue = repuesto.Modelo
                         },
-                        new SqlParameter
+                        new NpgsqlParameter
                             {
                             ParameterName = "marca",
-                            SqlDbType = SqlDbType.VarChar,
-                            SqlValue = repuesto.Marca
+                            NpgsqlDbType = NpgsqlDbType.Varchar,
+                            NpgsqlValue = repuesto.Marca
                         },
-                         new SqlParameter
+                         new NpgsqlParameter
                             {
                             ParameterName = "cantidad",
-                            SqlDbType = SqlDbType.Decimal,
-                            SqlValue = repuesto.Cantidad
+                            NpgsqlDbType = NpgsqlDbType.Numeric,
+                            NpgsqlValue = repuesto.Cantidad
                         },
-                         new SqlParameter
+                         new NpgsqlParameter
                             {
                             ParameterName = "precio",
-                            SqlDbType = SqlDbType.Decimal,
-                            SqlValue = repuesto.Precio
+                            NpgsqlDbType = NpgsqlDbType.Numeric,
+                            NpgsqlValue = repuesto.Precio
                         },
-                         new SqlParameter
+                         new NpgsqlParameter
                             {
                             ParameterName = "impuesto",
-                            SqlDbType = SqlDbType.Decimal,
-                            SqlValue = repuesto.Impuesto
+                            NpgsqlDbType = NpgsqlDbType.Numeric,
+                            NpgsqlValue = repuesto.Impuesto
                         },
-                         new SqlParameter
+                         new NpgsqlParameter
                             {
                             ParameterName = "gravado",
-                            SqlDbType = SqlDbType.Bit,
-                            SqlValue = repuesto.Gravado
+                            NpgsqlDbType = NpgsqlDbType.Bit,
+                            NpgsqlValue = repuesto.Gravado
                         },
                 };
 
@@ -145,13 +146,13 @@ namespace MecanicaUTN.Logica.SqlServer
 
             sql.AppendLine("delete from repuesto where id=@id");
 
-            List<SqlParameter> parametros = new List<SqlParameter>
+            List<NpgsqlParameter> parametros = new List<NpgsqlParameter>
                 {
-                    new SqlParameter
+                    new NpgsqlParameter
                         {
                             ParameterName = "id",
-                            SqlDbType = SqlDbType.Int,
-                            SqlValue = id
+                            NpgsqlDbType = NpgsqlDbType.Integer,
+                            NpgsqlValue = id
                         },
                 };
 

@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoDatos\AccesoDatosPosgrest.cs" />
+    <Compile Include="AccesoDatos\AccesoDatosPostgres.cs" />
     <Compile Include="AccesoDatos\AccesoDatosSqlServer.cs" />
     <Compile Include="AccesoDatos\AccesoDatos.cs" />
     <Compile Include="AccesoDatos\ContextDataBase.cs" />
@@ -59,6 +59,7 @@
     <Compile Include="Entidades\Repuesto.cs" />
     <Compile Include="Logica\Intefaces\IRepuestoSql.cs" />
     <Compile Include="Logica\Objetos\RepuestosSql.cs" />
+    <Compile Include="Logica\Postgres\RepuestoPostgres.cs" />
     <Compile Include="Logica\SqlServer\RepuestoSqlServer.cs" />
     <Compile Include="Vista\frmAgregarRepuesto.cs">
       <SubType>Form</SubType>
