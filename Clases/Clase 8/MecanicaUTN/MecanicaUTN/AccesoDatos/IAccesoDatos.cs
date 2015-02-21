@@ -19,6 +19,12 @@ namespace MecanicaUTN.AccesoDatos
 
         DataSet EjecutarConsultaSQL(String sql, IEnumerable parametros);
 
+        void EjecutarSQL(string sql, IEnumerable parametros);
+
+        Int32 EjecutarScalarSQL(String pSql);
+
+        DataSet EjecutarSQLListas(String sql, String tabla);
+
         #endregion
 
         #region Set & Gets

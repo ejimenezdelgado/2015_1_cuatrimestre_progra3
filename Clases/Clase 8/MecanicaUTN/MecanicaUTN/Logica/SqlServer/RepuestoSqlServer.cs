@@ -65,7 +65,7 @@ namespace MecanicaUTN.Logica.SqlServer
                         },
                 };
 
-            AccesoDatos.AccesoDatos.Instance.accesoDatos.EjecutarConsultaSQL(sql.ToString(), parametros);
+            AccesoDatos.AccesoDatos.Instance.accesoDatos.EjecutarSQL(sql.ToString(), parametros);
             if(AccesoDatos.AccesoDatos.Instance.accesoDatos.HayError)
             {
                 this.HayError = true;
