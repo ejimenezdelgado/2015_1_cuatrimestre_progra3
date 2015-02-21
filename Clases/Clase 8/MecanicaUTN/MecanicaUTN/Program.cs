@@ -18,9 +18,7 @@ namespace MecanicaUTN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            RepuestosCL oRepuestosCL = new RepuestosCL();
-            oRepuestosCL.TestBaseDatos();
+            AccesoDatos.AccesoDatos accesoDatos = AccesoDatos.AccesoDatos.Instance;
             Application.Run(new frmDashboard());
         }
     }

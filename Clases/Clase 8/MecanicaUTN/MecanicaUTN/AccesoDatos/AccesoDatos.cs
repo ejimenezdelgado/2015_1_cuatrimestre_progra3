@@ -45,7 +45,8 @@ namespace MecanicaUTN.AccesoDatos
         }
 
         // Propiedad para acceder a la instancia
-        public static AccesoDatos Instance
+        public static AccesoDatos
+            Instance
         {
             get
             {

@@ -50,7 +50,9 @@
     <Compile Include="AccesoDatos\ContextDataBase.cs" />
     <Compile Include="AccesoDatos\IAccesoDatos.cs" />
     <Compile Include="Entidades\Repuesto.cs" />
-    <Compile Include="Logica\RepuestosCL.cs" />
+    <Compile Include="Logica\Intefaces\IRepuestoSql.cs" />
+    <Compile Include="Logica\Objetos\RepuestosSql.cs" />
+    <Compile Include="Logica\SqlServer\RepuestoSqlServer.cs" />
     <Compile Include="Vista\frmAgregarRepuesto.cs">
       <SubType>Form</SubType>
     </Compile>

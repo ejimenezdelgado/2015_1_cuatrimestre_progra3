@@ -1,4 +1,5 @@
-﻿using MecanicaUTN.Logica;
+﻿using MecanicaUTN.Entidades;
+using MecanicaUTN.Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,23 +24,28 @@ namespace MecanicaUTN.Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            RepuestosCL oRepuestosCl = new RepuestosCL();
-           /* oRepuestosCl.AgregarRepuesto(txtNombre.Text, txtModelo.Text,
-                                         txtMarca.Text, (int)txtCantidad.Value,
-                                         (int)txtPrecio.Value,
-                                         (int)txtImpuesto.Value,
-                                         chkGravado.Checked);
+            RepuestosSql oRepuestosSql = new RepuestosSql();
+            Repuesto repuesto = new Repuesto();
+            repuesto.Nombre=txtNombre.Text;
+            repuesto.Modelo= txtModelo.Text;
+            repuesto.Marca= txtMarca.Text;
+            repuesto.Cantidad= (int)txtCantidad.Value;
+            repuesto.Precio= (double)txtPrecio.Value;
+            repuesto.Impuesto= (int)txtImpuesto.Value;
+            repuesto.Gravado= chkGravado.Checked;
 
-            if (oRepuestosCl.HayError)
+            oRepuestosSql.AgregarRepuesto(repuesto);
+
+            if (oRepuestosSql.HayError)
             {
-                MessageBox.Show(oRepuestosCl.DescripcionError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(oRepuestosSql.DescripcionError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
             }
             else
             {
                 MessageBox.Show("Repuesto agregado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.CargarDatos();
-            }*/
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -49,7 +55,7 @@ namespace MecanicaUTN.Vista
 
         private void CargarDatos()
         {
-            RepuestosCL oRepuestosCl = new RepuestosCL();
+            RepuestosSql oRepuestosCl = new RepuestosSql();
            // dtgRepuesto.DataSource=oRepuestosCl.ObtenerRepuestos();
         }
 
@@ -78,7 +84,7 @@ namespace MecanicaUTN.Vista
             btnAceptar.Enabled = false;
             btnCancelar.Enabled = false;
 
-            RepuestosCL oRepuestosCl = new RepuestosCL();
+            RepuestosSql oRepuestosCl = new RepuestosSql();
            /* oRepuestosCl.EliminarRepuesto(dtgRepuesto.SelectedRows[0].Cells[0].Value.ToString());
             if (oRepuestosCl.HayError)
             {

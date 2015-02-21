@@ -20,7 +20,7 @@ namespace MecanicaUTN.Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            RepuestosCL oRepuestosCl = new RepuestosCL();
+            RepuestosSql oRepuestosCl = new RepuestosSql();
           /*  oRepuestosCl.AgregarRepuesto(txtNombre.Text, txtModelo.Text,
                                          txtMarca.Text, (int)txtCantidad.Value,
                                          (int)txtPrecio.Value,
