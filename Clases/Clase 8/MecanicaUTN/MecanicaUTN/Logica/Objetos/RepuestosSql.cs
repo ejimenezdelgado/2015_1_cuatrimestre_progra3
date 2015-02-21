@@ -7,6 +7,7 @@ using MecanicaUTN.AccesoDatos;
 using MecanicaUTN.Logica.Intefaces;
 using MecanicaUTN.Logica.SqlServer;
 using MecanicaUTN.Entidades;
+using MecanicaUTN.Logica.Postgres;
 
 namespace MecanicaUTN.Logica
 {
@@ -24,6 +25,7 @@ namespace MecanicaUTN.Logica
                     repuestoSql = new RepuestoSqlServer();
                     break;
                 case ContextDataBase.PostgreSql:
+                    repuestoSql = new RepuestoPostgres();
                     break;
                 default:
                     break;

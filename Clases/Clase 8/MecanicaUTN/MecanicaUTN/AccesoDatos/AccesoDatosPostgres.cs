@@ -226,7 +226,7 @@ namespace MecanicaUTN.AccesoDatos
 
         public ContextDataBase ContextDataBase
         {
-            get { return ContextDataBase.SqlServer; }
+            get { return ContextDataBase.PostgreSql; }
         }
 
         public void LimpiarEstado()

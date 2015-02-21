@@ -61,7 +61,7 @@ namespace MecanicaUTN.Logica.Postgres
                          new NpgsqlParameter
                             {
                             ParameterName = "gravado",
-                            NpgsqlDbType = NpgsqlDbType.Bit,
+                            NpgsqlDbType = NpgsqlDbType.Boolean,
                             NpgsqlValue = repuesto.Gravado
                         },
                 };
@@ -127,7 +127,7 @@ namespace MecanicaUTN.Logica.Postgres
                          new NpgsqlParameter
                             {
                             ParameterName = "gravado",
-                            NpgsqlDbType = NpgsqlDbType.Bit,
+                            NpgsqlDbType = NpgsqlDbType.Boolean,
                             NpgsqlValue = repuesto.Gravado
                         },
                 };
