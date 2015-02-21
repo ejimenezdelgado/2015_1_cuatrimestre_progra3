@@ -82,48 +82,8 @@ namespace MecanicaUTN.Logica.SqlServer
             throw new NotImplementedException();
         }
 
-        void IRepuestoSql.Agregar(Repuesto repuesto)
-        {
-            throw new NotImplementedException();
-        }
+        public Boolean HayError { set; get; }
 
-        void IRepuestoSql.Editar(int id, Repuesto repuesto)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IRepuestoSql.Eliminar(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Repuesto> IRepuestoSql.TraerRepuestos()
-        {
-            throw new NotImplementedException();
-        }
-
-        bool IRepuestoSql.HayError
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        string IRepuestoSql.DescripcionError
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public String DescripcionError { set; get; }
     }
 }
