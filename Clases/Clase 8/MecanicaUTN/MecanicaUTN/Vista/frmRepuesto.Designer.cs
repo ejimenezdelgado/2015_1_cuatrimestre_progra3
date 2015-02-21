@@ -49,7 +49,6 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
@@ -243,11 +242,8 @@
             // 
             this.dtgRepuesto.AllowUserToAddRows = false;
             this.dtgRepuesto.AllowUserToDeleteRows = false;
-            this.dtgRepuesto.AllowUserToOrderColumns = true;
             this.dtgRepuesto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgRepuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgRepuesto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colModelo});
             this.dtgRepuesto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgRepuesto.Location = new System.Drawing.Point(0, 47);
             this.dtgRepuesto.MultiSelect = false;
@@ -299,13 +295,6 @@
             this.eliminarToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
-            // colModelo
-            // 
-            this.colModelo.DataPropertyName = "Modelo";
-            this.colModelo.HeaderText = "Modelo bonito";
-            this.colModelo.Name = "colModelo";
-            this.colModelo.ReadOnly = true;
-            // 
             // frmRepuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +343,5 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colModelo;
     }
 }

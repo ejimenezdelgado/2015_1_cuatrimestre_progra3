@@ -9,11 +9,11 @@ namespace MecanicaUTN.Logica.Intefaces
 {
     public interface IRepuestoSql
     {
-        void Agregar(Repuesto repuesto);
+        void AgregarRepuesto(Repuesto repuesto);
 
-        void Editar(int id ,Repuesto repuesto);
+        void EditarRepuesto(int id, Repuesto repuesto);
 
-        void Eliminar(int id);
+        void EliminarRepuesto(int id);
 
         List<Repuesto> TraerRepuestos();
 

@@ -10,7 +10,7 @@ using MecanicaUTN.Entidades;
 
 namespace MecanicaUTN.Logica
 {
-    public class RepuestosSql
+    public class RepuestosSql:IRepuestoSql
     {
         public Boolean HayError { set; get; }
         public String DescripcionError { set; get; }
@@ -34,7 +34,7 @@ namespace MecanicaUTN.Logica
         public void AgregarRepuesto(Repuesto repuesto)
         {
             IRepuestoSql repuestoSql = this.ObtenerInstancia();
-            repuestoSql.Agregar(repuesto);
+            repuestoSql.AgregarRepuesto(repuesto);
             if(repuestoSql.HayError)
             {
                 this.HayError = true;
@@ -42,10 +42,10 @@ namespace MecanicaUTN.Logica
             }
         }
 
-        public void Editar(int id ,Repuesto repuesto)
+        public void EditarRepuesto(int id, Repuesto repuesto)
         {
             IRepuestoSql repuestoSql = this.ObtenerInstancia();
-            repuestoSql.Editar(id,repuesto);
+            repuestoSql.EditarRepuesto(id,repuesto);
             if (repuestoSql.HayError)
             {
                 this.HayError = true;
@@ -63,6 +63,18 @@ namespace MecanicaUTN.Logica
                 this.DescripcionError = repuestoSql.DescripcionError;
             }
             return repuestos;
+        }
+
+
+        public void EliminarRepuesto(int id)
+        {
+            IRepuestoSql repuestoSql = this.ObtenerInstancia();
+            repuestoSql.EliminarRepuesto(id);
+            if (repuestoSql.HayError)
+            {
+                this.HayError = true;
+                this.DescripcionError = repuestoSql.DescripcionError;
+            }
         }
     }
 }

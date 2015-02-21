@@ -13,7 +13,7 @@ namespace MecanicaUTN.Logica.SqlServer
     public class RepuestoSqlServer:IRepuestoSql
     {
 
-        public void Agregar(Repuesto repuesto)
+        public void AgregarRepuesto(Repuesto repuesto)
         {
             var sql = new StringBuilder();
 
@@ -73,11 +73,11 @@ namespace MecanicaUTN.Logica.SqlServer
             }
         }
 
-        public void Editar(int id, Entidades.Repuesto repuesto)
+        public void EditarRepuesto(int id, Entidades.Repuesto repuesto)
         {
             var sql = new StringBuilder();
 
-            sql.AppendLine("update repuestos set nombre=@nombre,modelo=@modelo,marca=@marca,cantidad=@cantidad,precio=@precio,impuesto=@impuesto,gravado=@gravado where id=@id");
+            sql.AppendLine("update repuesto set nombre=@nombre,modelo=@modelo,marca=@marca,cantidad=@cantidad,precio=@precio,impuesto=@impuesto,gravado=@gravado where id=@id");
 
             List<SqlParameter> parametros = new List<SqlParameter>
                 {
@@ -139,9 +139,28 @@ namespace MecanicaUTN.Logica.SqlServer
             }
         }
 
-        public void Eliminar(int id)
+        public void EliminarRepuesto(int id)
         {
-            throw new NotImplementedException();
+             var sql = new StringBuilder();
+
+            sql.AppendLine("delete from repuesto where id=@id");
+
+            List<SqlParameter> parametros = new List<SqlParameter>
+                {
+                    new SqlParameter
+                        {
+                            ParameterName = "id",
+                            SqlDbType = SqlDbType.Int,
+                            SqlValue = id
+                        },
+                };
+
+             AccesoDatos.AccesoDatos.Instance.accesoDatos.EjecutarSQL(sql.ToString(), parametros);
+            if (AccesoDatos.AccesoDatos.Instance.accesoDatos.HayError)
+            {
+                this.HayError = true;
+                this.DescripcionError = AccesoDatos.AccesoDatos.Instance.accesoDatos.DescripcionError;
+            }
         }
 
         public List<Repuesto> TraerRepuestos()
