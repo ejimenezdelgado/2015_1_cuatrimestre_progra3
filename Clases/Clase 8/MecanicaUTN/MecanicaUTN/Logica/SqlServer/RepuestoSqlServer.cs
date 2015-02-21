@@ -65,6 +65,12 @@ namespace MecanicaUTN.Logica.SqlServer
                         },
                 };
 
+            AccesoDatos.AccesoDatos.Instance.accesoDatos.EjecutarConsultaSQL(sql.ToString(), parametros);
+            if(AccesoDatos.AccesoDatos.Instance.accesoDatos.HayError)
+            {
+                this.HayError = true;
+                this.DescripcionError = AccesoDatos.AccesoDatos.Instance.accesoDatos.DescripcionError;
+            }
         }
 
         public void Editar(int id, Entidades.Repuesto repuesto)
