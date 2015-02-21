@@ -41,5 +41,28 @@ namespace MecanicaUTN.Logica
                 this.DescripcionError = repuestoSql.DescripcionError;
             }
         }
+
+        public void Editar(int id ,Repuesto repuesto)
+        {
+            IRepuestoSql repuestoSql = this.ObtenerInstancia();
+            repuestoSql.Editar(id,repuesto);
+            if (repuestoSql.HayError)
+            {
+                this.HayError = true;
+                this.DescripcionError = repuestoSql.DescripcionError;
+            }
+        }
+
+        public List<Repuesto> TraerRepuestos()
+        {
+            IRepuestoSql repuestoSql = this.ObtenerInstancia();
+            List<Repuesto> repuestos= repuestoSql.TraerRepuestos();
+            if (repuestoSql.HayError)
+            {
+                this.HayError = true;
+                this.DescripcionError = repuestoSql.DescripcionError;
+            }
+            return repuestos;
+        }
     }
 }

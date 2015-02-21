@@ -29,9 +29,9 @@ namespace MecanicaUTN.Vista
             repuesto.Nombre=txtNombre.Text;
             repuesto.Modelo= txtModelo.Text;
             repuesto.Marca= txtMarca.Text;
-            repuesto.Cantidad= (int)txtCantidad.Value;
-            repuesto.Precio= (double)txtPrecio.Value;
-            repuesto.Impuesto= (int)txtImpuesto.Value;
+            repuesto.Cantidad = (decimal)txtCantidad.Value;
+            repuesto.Precio= (decimal)txtPrecio.Value;
+            repuesto.Impuesto = (decimal)txtImpuesto.Value;
             repuesto.Gravado= chkGravado.Checked;
 
             oRepuestosSql.AgregarRepuesto(repuesto);
@@ -56,7 +56,13 @@ namespace MecanicaUTN.Vista
         private void CargarDatos()
         {
             RepuestosSql oRepuestosCl = new RepuestosSql();
-           // dtgRepuesto.DataSource=oRepuestosCl.ObtenerRepuestos();
+            List<Repuesto> repuestos = oRepuestosCl.TraerRepuestos();
+            if (oRepuestosCl.HayError)
+            {
+                MessageBox.Show(oRepuestosCl.DescripcionError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            dtgRepuesto.DataSource = repuestos;
         }
 
 
@@ -74,8 +80,6 @@ namespace MecanicaUTN.Vista
             esNuevo = false;
             btnAceptar.Enabled = false;
             btnCancelar.Enabled = false;
-
-            txtNombre.Text = dtgRepuesto.SelectedRows[0].Cells[1].Value.ToString();
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,6 +100,22 @@ namespace MecanicaUTN.Vista
                 MessageBox.Show("Repuesto eliminado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.CargarDatos();
             }*/
+        }
+
+        private void dtgRepuesto_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (dtgRepuesto.SelectedRows.Count > 0)
+            {
+                Repuesto repuesto = (Repuesto)dtgRepuesto.SelectedRows[0].DataBoundItem;
+                txtNombre.Text = repuesto.Nombre;
+                txtModelo.Text = repuesto.Modelo;
+                txtMarca.Text = repuesto.Modelo;
+                txtCantidad.Value = repuesto.Cantidad;
+                txtPrecio.Value = repuesto.Precio;
+                txtImpuesto.Value = repuesto.Impuesto;
+                chkGravado.Checked = repuesto.Gravado;
+            }
         }
 
 

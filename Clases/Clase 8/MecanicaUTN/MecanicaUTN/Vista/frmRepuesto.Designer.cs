@@ -49,6 +49,7 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
@@ -205,7 +206,9 @@
             // 
             // splRepuesto
             // 
+            this.splRepuesto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splRepuesto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splRepuesto.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splRepuesto.Location = new System.Drawing.Point(0, 0);
             this.splRepuesto.Name = "splRepuesto";
             // 
@@ -232,17 +235,27 @@
             this.splRepuesto.Panel2.Controls.Add(this.dtgRepuesto);
             this.splRepuesto.Panel2.Controls.Add(this.menuStrip1);
             this.splRepuesto.Size = new System.Drawing.Size(741, 466);
-            this.splRepuesto.SplitterDistance = 315;
+            this.splRepuesto.SplitterDistance = 320;
+            this.splRepuesto.SplitterWidth = 10;
             this.splRepuesto.TabIndex = 45;
             // 
             // dtgRepuesto
             // 
+            this.dtgRepuesto.AllowUserToAddRows = false;
+            this.dtgRepuesto.AllowUserToDeleteRows = false;
+            this.dtgRepuesto.AllowUserToOrderColumns = true;
+            this.dtgRepuesto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgRepuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgRepuesto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colModelo});
             this.dtgRepuesto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgRepuesto.Location = new System.Drawing.Point(0, 47);
+            this.dtgRepuesto.MultiSelect = false;
             this.dtgRepuesto.Name = "dtgRepuesto";
-            this.dtgRepuesto.Size = new System.Drawing.Size(422, 419);
+            this.dtgRepuesto.ReadOnly = true;
+            this.dtgRepuesto.Size = new System.Drawing.Size(407, 415);
             this.dtgRepuesto.TabIndex = 0;
+            this.dtgRepuesto.SelectionChanged += new System.EventHandler(this.dtgRepuesto_SelectionChanged);
             // 
             // menuStrip1
             // 
@@ -252,7 +265,7 @@
             this.eliminarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(422, 47);
+            this.menuStrip1.Size = new System.Drawing.Size(407, 47);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -285,6 +298,13 @@
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // colModelo
+            // 
+            this.colModelo.DataPropertyName = "Modelo";
+            this.colModelo.HeaderText = "Modelo bonito";
+            this.colModelo.Name = "colModelo";
+            this.colModelo.ReadOnly = true;
             // 
             // frmRepuesto
             // 
@@ -334,5 +354,6 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colModelo;
     }
 }
