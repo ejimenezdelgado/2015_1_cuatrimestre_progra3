@@ -60,7 +60,9 @@
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Logica\Intefaces\IRepuestoSql.cs" />
     <Compile Include="Logica\Intefaces\IUsuarioSql.cs" />
-    <Compile Include="Logica\Objetos\RepuestosSql.cs" />
+    <Compile Include="Logica\Sql\UsuarioSql.cs" />
+    <Compile Include="Logica\Sql\RepuestosSql.cs" />
+    <Compile Include="Logica\Postgres\UsuarioPostgres.cs" />
     <Compile Include="Logica\Postgres\RepuestoPostgres.cs" />
     <Compile Include="Logica\SqlServer\RepuestoSqlServer.cs" />
     <Compile Include="Vista\frmAgregarRepuesto.cs">

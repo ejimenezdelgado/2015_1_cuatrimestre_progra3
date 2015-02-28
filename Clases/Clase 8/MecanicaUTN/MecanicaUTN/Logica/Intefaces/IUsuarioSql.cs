@@ -11,6 +11,9 @@ namespace MecanicaUTN.Logica.Intefaces
     {
         void AgregarUsuario(Usuario usuario);
 
-        void ValidarUsuario(Usuario usuario);
+        Usuario ValidarUsuario(Usuario usuario);
+
+        Boolean HayError { set; get; }
+        String DescripcionError { set; get; }
     }
 }
