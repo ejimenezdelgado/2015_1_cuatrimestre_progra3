@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MecanicaUTN.Entidades;
+using MecanicaUTN.Logica;
+using MecanicaUTN.Vista;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +22,19 @@ namespace MecanicaUTN
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if ((txtUsuario.Text == "admin") && (txtClave.Text == "12345"))
+            UsuarioSql oUsuarioSql = new UsuarioSql();
+            Usuario oUsuario=new Usuario();
+            oUsuario.Nombre=txtUsuario.Text;
+            oUsuario.clave=txtClave.Text;
+            Usuario usuarioSelecionado= oUsuarioSql.ValidarUsuario(oUsuario);
+            if (usuarioSelecionado!=null)
             {
-                MessageBox.Show("Gracias por ingresar", "Información", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                this.Hide();
+              /*  MessageBox.Show("Gracias por ingresar", "Información", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);*/
+                frmDashboard ofrmDashboard = new frmDashboard();
+                ofrmDashboard.ShowDialog();
+               
             }
             else
             {

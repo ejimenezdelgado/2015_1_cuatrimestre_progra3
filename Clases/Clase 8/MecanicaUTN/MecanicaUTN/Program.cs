@@ -19,7 +19,7 @@ namespace MecanicaUTN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AccesoDatos.AccesoDatos accesoDatos = AccesoDatos.AccesoDatos.Instance;
-            Application.Run(new frmDashboard());
+            Application.Run(new FrmLogin());
         }
     }
 }

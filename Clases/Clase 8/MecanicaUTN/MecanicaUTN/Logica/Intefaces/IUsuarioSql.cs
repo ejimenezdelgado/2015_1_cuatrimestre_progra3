@@ -10,9 +10,7 @@ namespace MecanicaUTN.Logica.Intefaces
     public interface IUsuarioSql
     {
         void AgregarUsuario(Usuario usuario);
-
         Usuario ValidarUsuario(Usuario usuario);
-
         Boolean HayError { set; get; }
         String DescripcionError { set; get; }
     }

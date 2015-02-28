@@ -55,8 +55,24 @@ namespace MecanicaUTN.Logica.Postgres
             var sql = new StringBuilder();
             Usuario usuarioSelecionado=null;
 
-            sql.AppendLine("select count(*) from usuario where nombre=@nombre and md5(clave)");
-            DataSet datos = AccesoDatos.AccesoDatos.Instance.accesoDatos.EjecutarConsultaSQL(sql.ToString());
+            sql.AppendLine("select * from usuario where nombre=@nombre and clave=md5(@clave)");
+            List<NpgsqlParameter> parametros = new List<NpgsqlParameter>
+                {
+                    new NpgsqlParameter
+                        {
+                            ParameterName = "nombre",
+                            NpgsqlDbType = NpgsqlDbType.Varchar,
+                            NpgsqlValue = usuario.Nombre
+                        },
+                        new NpgsqlParameter
+                            {
+                            ParameterName = "clave",
+                            NpgsqlDbType = NpgsqlDbType.Varchar,
+                            NpgsqlValue = usuario.clave
+                        }
+                };
+
+            DataSet datos = AccesoDatos.AccesoDatos.Instance.accesoDatos.EjecutarConsultaSQL(sql.ToString(),parametros);
             if (AccesoDatos.AccesoDatos.Instance.accesoDatos.HayError)
             {
                 this.HayError = true;
@@ -66,8 +82,10 @@ namespace MecanicaUTN.Logica.Postgres
             {
                 if (datos.Tables[0].Rows.Count > 0)
                 {
+                    usuarioSelecionado = new Usuario();
                     usuarioSelecionado.Nombre = datos.Tables[0].Rows[0]["nombre"].ToString();
                     usuarioSelecionado.Nombre = usuario.clave;
+                    usuarioSelecionado.EsAdmin =(Boolean) datos.Tables[0].Rows[0]["admin"];
                 }
 
             }
