@@ -7,5 +7,5 @@
 	cantidad decimal(18,2) NOT NULL,
 	precio decimal(18,2) NOT NULL,
 	impuesto decimal(18,2) NOT NULL,
-	gravado bit NOT NULL
+	gravado boolean NOT NULL
 )
