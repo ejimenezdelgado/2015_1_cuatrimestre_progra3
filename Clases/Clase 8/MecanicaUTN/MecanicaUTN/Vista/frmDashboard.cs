@@ -14,7 +14,8 @@ namespace MecanicaUTN.Vista
     {
         public enum formulario
         {
-            repuesto
+            repuesto,
+            usuario
         };
 
         public frmDashboard()
@@ -24,19 +25,18 @@ namespace MecanicaUTN.Vista
 
         public void mostrarFormulario(formulario formulario)
         {
-           if(splPrincipal.Panel2.Controls.Count>0)
-           {
-               foreach (Control item in splPrincipal.Panel2.Controls)
-	           {
-                   splPrincipal.Panel2.Controls.Remove(item);
-	           }              
-           }
-         
+            if (splPrincipal.Panel2.Controls.Count > 0)
+            {
+                foreach (Control item in splPrincipal.Panel2.Controls)
+                {
+                    splPrincipal.Panel2.Controls.Remove(item);
+                }
+            }
 
-           switch (formulario)
+
+            switch (formulario)
             {
                 case formulario.repuesto:
-
                     frmRepuesto ofrmRepuesto = new frmRepuesto();
                     ofrmRepuesto.TopLevel = false;
                     ofrmRepuesto.FormBorderStyle = FormBorderStyle.None;
@@ -44,17 +44,54 @@ namespace MecanicaUTN.Vista
                     this.splPrincipal.Panel2.Controls.Add(ofrmRepuesto);
                     this.splPrincipal.Panel2.Tag = ofrmRepuesto;
                     ofrmRepuesto.Show();
-
-
+                    break;
+                case formulario.usuario:
+                    frmUsuario ofrmUsuario = new frmUsuario();
+                    ofrmUsuario.TopLevel = false;
+                    ofrmUsuario.FormBorderStyle = FormBorderStyle.None;
+                    ofrmUsuario.Dock = DockStyle.Fill;
+                    this.splPrincipal.Panel2.Controls.Add(ofrmUsuario);
+                    this.splPrincipal.Panel2.Tag = ofrmUsuario;
+                    ofrmUsuario.Show();
                     break;
                 default:
                     break;
-            }   
+            }           
+            
         }
 
         private void menuRepuesto_Click(object sender, EventArgs e)
         {
             mostrarFormulario(formulario.repuesto);
+        }
+
+        private void repuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mostrarFormulario(formulario.repuesto);
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Program.oUsuario.EsAdmin)
+            {
+                mostrarFormulario(formulario.usuario);
+            }
+            else
+            {
+                MessageBox.Show( "Este usuario no tiene permisos para realizar esta accion","Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void usuariosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (Program.oUsuario.EsAdmin)
+            {
+                mostrarFormulario(formulario.usuario);
+            }
+            else
+            {
+                MessageBox.Show("Advertencia", "Este usuario no tiene permisos para realizar esta accion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }

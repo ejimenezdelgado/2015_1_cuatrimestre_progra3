@@ -1,4 +1,5 @@
-﻿using MecanicaUTN.Logica;
+﻿using MecanicaUTN.Entidades;
+using MecanicaUTN.Logica;
 using MecanicaUTN.Vista;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace MecanicaUTN
 {
     static class Program
     {
+        public static Usuario oUsuario;
+
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

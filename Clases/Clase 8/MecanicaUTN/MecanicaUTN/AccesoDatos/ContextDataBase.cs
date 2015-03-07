@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace MecanicaUTN.AccesoDatos
 {
-    public enum ContextDataBase { SqlServer, PostgreSql };
+    public enum ContextDataBase { SqlServer, PostgreSql,Oracle };
 }

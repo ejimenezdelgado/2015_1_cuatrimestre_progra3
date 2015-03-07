@@ -80,5 +80,11 @@ namespace MecanicaUTN.Logica
                 this.DescripcionError = repuestoSql.DescripcionError;
             }
         }
+
+        public int CantidadRepuesto()
+        {
+            IRepuestoSql repuestoSql = this.ObtenerInstancia();
+            return repuestoSql.TraerRepuestos().Count();
+        }
     }
 }

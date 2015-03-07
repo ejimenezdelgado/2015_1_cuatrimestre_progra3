@@ -114,7 +114,9 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtUsuario);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.picbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
