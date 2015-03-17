@@ -20,15 +20,9 @@ namespace Loteria.tipoCambio {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet ObtenerIndicadoresEconomicos(string tcIndicador, string tcFechaInicio, string tcFechaFinal, string tcNombre, string tnSubNiveles);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.sdde.bccr.fi.cr/ObtenerIndicadoresEconomicos", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> ObtenerIndicadoresEconomicosAsync(string tcIndicador, string tcFechaInicio, string tcFechaFinal, string tcNombre, string tnSubNiveles);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://ws.sdde.bccr.fi.cr/ObtenerIndicadoresEconomicosXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string ObtenerIndicadoresEconomicosXML(string tcIndicador, string tcFechaInicio, string tcFechaFinal, string tcNombre, string tnSubNiveles);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.sdde.bccr.fi.cr/ObtenerIndicadoresEconomicosXML", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> ObtenerIndicadoresEconomicosXMLAsync(string tcIndicador, string tcFechaInicio, string tcFechaFinal, string tcNombre, string tnSubNiveles);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -62,16 +56,8 @@ namespace Loteria.tipoCambio {
             return base.Channel.ObtenerIndicadoresEconomicos(tcIndicador, tcFechaInicio, tcFechaFinal, tcNombre, tnSubNiveles);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> ObtenerIndicadoresEconomicosAsync(string tcIndicador, string tcFechaInicio, string tcFechaFinal, string tcNombre, string tnSubNiveles) {
-            return base.Channel.ObtenerIndicadoresEconomicosAsync(tcIndicador, tcFechaInicio, tcFechaFinal, tcNombre, tnSubNiveles);
-        }
-        
         public string ObtenerIndicadoresEconomicosXML(string tcIndicador, string tcFechaInicio, string tcFechaFinal, string tcNombre, string tnSubNiveles) {
             return base.Channel.ObtenerIndicadoresEconomicosXML(tcIndicador, tcFechaInicio, tcFechaFinal, tcNombre, tnSubNiveles);
-        }
-        
-        public System.Threading.Tasks.Task<string> ObtenerIndicadoresEconomicosXMLAsync(string tcIndicador, string tcFechaInicio, string tcFechaFinal, string tcNombre, string tnSubNiveles) {
-            return base.Channel.ObtenerIndicadoresEconomicosXMLAsync(tcIndicador, tcFechaInicio, tcFechaFinal, tcNombre, tnSubNiveles);
         }
     }
 }
