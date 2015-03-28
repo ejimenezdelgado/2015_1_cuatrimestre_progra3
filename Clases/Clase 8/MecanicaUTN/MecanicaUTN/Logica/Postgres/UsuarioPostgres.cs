@@ -53,7 +53,7 @@ namespace MecanicaUTN.Logica.Postgres
         public Usuario ValidarUsuario(Usuario usuario)
         {
             var sql = new StringBuilder();
-            Usuario usuarioSelecionado=null;
+            Usuario usuarioSelecionado=new Usuario();
 
             sql.AppendLine("select * from usuario where nombre=@nombre and clave=md5(@clave)");
             List<NpgsqlParameter> parametros = new List<NpgsqlParameter>

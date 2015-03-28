@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace MecanicaUTN.Entidades
 {
-    public class Usuario
+    public struct Usuario
     {
         public int Id { set; get; }
         public string Nombre { set; get; }
         public string clave { set; get; }
         public Boolean EsAdmin { set; get; }
+
+        public void dsds()
+        {
+
+        }
     }
 }

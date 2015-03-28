@@ -27,7 +27,7 @@ namespace MecanicaUTN
             oUsuario.Nombre=txtUsuario.Text;
             oUsuario.clave=txtClave.Text;
             Program.oUsuario = oUsuarioSql.ValidarUsuario(oUsuario);
-            if (Program.oUsuario != null)
+            if (Program.oUsuario.Id>0)
             {
                 this.Hide();
               /*  MessageBox.Show("Gracias por ingresar", "Información", MessageBoxButtons.OK,

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AccesoDatos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AccesoDatos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="sorteo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="premio" nillable="true" type="tns:ArrayOfpremio" />
+      <xs:element minOccurs="0" name="titulo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="sorteo" nillable="true" type="tns:sorteo" />
+  <xs:complexType name="ArrayOfpremio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="premio" nillable="true" type="tns:premio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfpremio" nillable="true" type="tns:ArrayOfpremio" />
+  <xs:complexType name="premio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="importancia" type="xs:int" />
+      <xs:element minOccurs="0" name="monto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="numero" type="xs:int" />
+      <xs:element minOccurs="0" name="sorteo" type="xs:int" />
+      <xs:element minOccurs="0" name="sorteo1" nillable="true" type="tns:sorteo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="premio" nillable="true" type="tns:premio" />
+</xs:schema>

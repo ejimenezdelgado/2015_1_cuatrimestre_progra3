@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LoteriaNacional" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2215/LoteriaNacional.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2215/LoteriaNacional.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2215/LoteriaNacional.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AccesoDatos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILoteriaNacional_AgregarSorteo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarSorteo" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_AgregarSorteo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarSorteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_EditarSorteo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarSorteo" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_EditarSorteo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarSorteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_EliminarSorteo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSorteo" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_EliminarSorteo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSorteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_AgregarPremio_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarPremio" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_AgregarPremio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarPremioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_EditarPremio_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarPremio" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_EditarPremio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarPremioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_EliminarPremio_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPremio" />
+  </wsdl:message>
+  <wsdl:message name="ILoteriaNacional_EliminarPremio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPremioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILoteriaNacional">
+    <wsdl:operation name="AgregarSorteo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoteriaNacional/AgregarSorteo" message="tns:ILoteriaNacional_AgregarSorteo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoteriaNacional/AgregarSorteoResponse" message="tns:ILoteriaNacional_AgregarSorteo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarSorteo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoteriaNacional/EditarSorteo" message="tns:ILoteriaNacional_EditarSorteo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoteriaNacional/EditarSorteoResponse" message="tns:ILoteriaNacional_EditarSorteo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSorteo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoteriaNacional/EliminarSorteo" message="tns:ILoteriaNacional_EliminarSorteo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoteriaNacional/EliminarSorteoResponse" message="tns:ILoteriaNacional_EliminarSorteo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPremio">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoteriaNacional/AgregarPremio" message="tns:ILoteriaNacional_AgregarPremio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoteriaNacional/AgregarPremioResponse" message="tns:ILoteriaNacional_AgregarPremio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarPremio">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoteriaNacional/EditarPremio" message="tns:ILoteriaNacional_EditarPremio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoteriaNacional/EditarPremioResponse" message="tns:ILoteriaNacional_EditarPremio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPremio">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoteriaNacional/EliminarPremio" message="tns:ILoteriaNacional_EliminarPremio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoteriaNacional/EliminarPremioResponse" message="tns:ILoteriaNacional_EliminarPremio_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILoteriaNacional" type="tns:ILoteriaNacional">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AgregarSorteo">
+      <soap:operation soapAction="http://tempuri.org/ILoteriaNacional/AgregarSorteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarSorteo">
+      <soap:operation soapAction="http://tempuri.org/ILoteriaNacional/EditarSorteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSorteo">
+      <soap:operation soapAction="http://tempuri.org/ILoteriaNacional/EliminarSorteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPremio">
+      <soap:operation soapAction="http://tempuri.org/ILoteriaNacional/AgregarPremio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarPremio">
+      <soap:operation soapAction="http://tempuri.org/ILoteriaNacional/EditarPremio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPremio">
+      <soap:operation soapAction="http://tempuri.org/ILoteriaNacional/EliminarPremio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoteriaNacional">
+    <wsdl:port name="BasicHttpBinding_ILoteriaNacional" binding="tns:BasicHttpBinding_ILoteriaNacional">
+      <soap:address location="http://localhost:2215/LoteriaNacional.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
