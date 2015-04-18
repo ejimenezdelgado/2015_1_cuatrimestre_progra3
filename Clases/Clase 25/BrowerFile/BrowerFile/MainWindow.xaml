@@ -1,0 +1,12 @@
+﻿<Window x:Class="BrowerFile.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="736.25" Width="590">
+    <Grid RenderTransformOrigin="0.515,0.652">
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="265,78,0,0" VerticalAlignment="Top" Width="76" Click="btnBuscar_Click"/>
+        <TextBox x:Name="txtBusqueda" HorizontalAlignment="Left" Height="22" Margin="248,29,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <WebBrowser x:Name="webSeach" Height="432" Width="562" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>
